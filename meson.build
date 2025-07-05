@@ -8,6 +8,15 @@ project(
 
 dependencies = []
 
+glad_proj = subproject('glad')
+glad_dep = glad_proj.get_variable('glad_dep')
+dependencies += glad_dep
+
+cmake = import('cmake')
+glfw_proj = cmake.subproject('glfw')
+glfw_dep = glfw_proj.dependency('glfw')
+dependencies += glfw_dep
+
 exe = executable(
   'dvision',
   'dvision.cpp',
