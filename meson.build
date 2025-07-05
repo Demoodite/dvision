@@ -8,9 +8,9 @@ project(
 
 dependencies = []
 
-glad_proj = subproject('glad')
-glad_dep = glad_proj.get_variable('glad_dep')
-dependencies += glad_dep
+glew_proj = subproject('glew')
+glew_dep = glew_proj.get_variable('glew_dep')
+dependencies += glew_dep
 
 cmake = import('cmake')
 
@@ -23,6 +23,7 @@ glm_dep = glm_proj.dependency('glm')
 dependencies += glm_dep
 
 sources = []
+include_directories = []
 
 subdir('src')
 
@@ -30,6 +31,7 @@ exe = executable(
   'dvision',
   sources,
   dependencies: dependencies,
+  include_directories: include_directories,
   install: true,
 )
 
