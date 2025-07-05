@@ -17,9 +17,13 @@ glfw_proj = cmake.subproject('glfw')
 glfw_dep = glfw_proj.dependency('glfw')
 dependencies += glfw_dep
 
+sources = []
+
+subdir('src')
+
 exe = executable(
   'dvision',
-  'dvision.cpp',
+  sources,
   dependencies: dependencies,
   install: true,
 )
