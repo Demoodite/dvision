@@ -13,9 +13,14 @@ glad_dep = glad_proj.get_variable('glad_dep')
 dependencies += glad_dep
 
 cmake = import('cmake')
+
 glfw_proj = cmake.subproject('glfw')
 glfw_dep = glfw_proj.dependency('glfw')
 dependencies += glfw_dep
+
+glm_proj = cmake.subproject('glm')
+glm_dep = glm_proj.dependency('glm')
+dependencies += glm_dep
 
 sources = []
 

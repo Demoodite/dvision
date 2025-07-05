@@ -1,0 +1,6 @@
+[wrap-git]
+directory = glm
+url = https://github.com/g-truc/glm
+revision = 1.0.1
+depth = 1
+method = cmake
