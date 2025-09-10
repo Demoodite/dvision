@@ -3,7 +3,7 @@ project(
   'cpp',
   meson_version: '>= 1.3.0',
   version: '0.1',
-  default_options: ['cpp_std=c++17', 'warning_level=3'],
+  default_options: ['cpp_std=c++20', 'warning_level=3'],
 )
 
 dependencies = []
@@ -11,6 +11,9 @@ dependencies = []
 glew_proj = subproject('glew')
 glew_dep = glew_proj.get_variable('glew_dep')
 dependencies += glew_dep
+
+opengl_dep = dependency('gl', required: true)
+dependencies += opengl_dep
 
 cmake = import('cmake')
 
